@@ -29,6 +29,11 @@ The SLAM system works by simulating a laser sensor that scans the environment, d
       distance, angle = np.random.multivariate_normal(mean, covariance)
       return [distance, angle]
 
+## Research and Resource
+[A line segment extraction algorithm
+using laser data based on seeded
+region growing - Haiming Gao , Xuebo Zhang, Yongchun Fang and Jing Yuan](https://journals.sagepub.com/doi/pdf/10.1177/1729881418755245)
+
 ## Credits
 
 This project was inspired by and credits the YouTube channel [Hobby Coding](https://youtube.com/@hobby_coding?si=fAOj5XnREPiPgcBT) for providing valuable insights and tutorials that helped in understanding the concepts behind this implementation.
