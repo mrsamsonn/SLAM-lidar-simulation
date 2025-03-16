@@ -1,4 +1,4 @@
-# SLAM LiDAR Mapping - Learning Project
+# SLAM LiDAR Mapping
 
 This project is a hands-on implementation to explore and understand the concepts behind **Simultaneous Localization and Mapping (SLAM)**. It uses a simulated laser sensor to detect obstacles and create a map of the environment in real-time. The system continuously updates the map based on sensor data and accounts for uncertainty in the measurements.
 
