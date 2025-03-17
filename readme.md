@@ -2,7 +2,7 @@
 
 This project is a hands-on implementation to explore and understand the concepts behind **Simultaneous Localization and Mapping (SLAM)**. It uses a simulated laser sensor to detect obstacles and create a map of the environment in real-time. The system continuously updates the map based on sensor data and accounts for uncertainty in the measurements, with added features for line segment extraction using seeded region growing.
 
-Lidar Mapping Sim        |  Mapping Feature Extraction
+Lidar Mapping Sim        |  Line Segment Extraction using Seed Region Growing Algorithm
 :-------------------------:|:-------------------------:
 <img src="https://github.com/user-attachments/assets/24646fbf-99d9-4112-bf62-31a8444018f5" alt="Lidar Mapping Sim" width="400"> |  <img src="https://github.com/user-attachments/assets/0c016ab9-066d-4b6f-aa84-449fa341d80a" alt="Mapping Feature Extraction" width="400">
 
