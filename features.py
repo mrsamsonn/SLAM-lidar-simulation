@@ -120,7 +120,7 @@ class featureDetection:
                 coordinates = self.AD2pos(point[0], point[1], point[2])
                 self.LASERPOINTS.append([coordinates, point[1]])
 
-        self.NP = len(self.LASERPOINTS - 1) #total number of laser points
+        self.NP = len(self.LASERPOINTS) - 1 #total number of laser points
 
     #line fitting
     #minimizes vertical distances for each point in line
@@ -137,6 +137,9 @@ class featureDetection:
 
         #create model for fitting
         linear_model = Model(self.linear_func)
+
+        #create a realData object using initiated data from above
+        data = RealData(x, y)
 
         #set up ODR with model and data
         odr_model = ODR(data, linear_model, beta0=[0., 0.])
@@ -171,12 +174,12 @@ class featureDetection:
                 #check if each points are satisfying to be in the seed segment
                 predicted_point = self.predictPoint(params, self.LASERPOINTS[k][0], robot_position)
                 predicted_points_to_draw.append(predicted_point)
-                d1 = self.dist_point2point(predicted_point, self.LASERPOINTS[k][[0]])
+                d1 = self.dist_point2point(predicted_point, self.LASERPOINTS[k][0])
 
                 if d1 > self.DELTA:
                     flag = False
                     break
-                d2 = self.dist_point2line(params, predicted_point)
+                d2 = self.dist_point2line(params, self.LASERPOINTS[k][0])
 
                 if d2 > self.EPSILON:
                     flag = False
@@ -200,7 +203,7 @@ class featureDetection:
                 break
             else:
                 m, b = self.odr_fit(self.LASERPOINTS[PB:PF])
-                line_eq = self.LASERPOINTS[PF][0]
+                line_eq = self.lineForm_Si2G(m, b)
                 POINT = self.LASERPOINTS[PF][0]
 
             PF = PF + 1
