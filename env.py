@@ -36,4 +36,4 @@ class buildEnvironment:
     def show_sensorData(self): #show data detected [red pixels]
         self.infomap = self.map.copy()
         for point in self.pointCloud:
-            self.infomap.set_at((int(point[0]), int(point[1])), (255, 0, 0))
+            self.infomap.set_at((int(point[0]), int(point[1])), (0, 0, 50))
